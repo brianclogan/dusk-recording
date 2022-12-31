@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Sandervankasteel\LaravelDuskScreenrecordings;
+namespace Brianclogan\DuskRecordings;
 
 
 use Closure;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Sandervankasteel\LaravelDuskScreenrecordings;
+namespace Brianclogan\DuskRecordings;
 
 
 use Illuminate\Support\Facades\Route;
@@ -28,6 +28,19 @@ class ServiceProvider extends BaseServiceProvider
                     return View::make('screenrecording::bootstrap');
                 });
             });
+        }
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Console\InstallCommand::class,
+                Console\DuskCommand::class,
+                Console\DuskFailsCommand::class,
+                Console\MakeCommand::class,
+                Console\PageCommand::class,
+                Console\PurgeCommand::class,
+                Console\ComponentCommand::class,
+                Console\ChromeDriverCommand::class,
+            ]);
         }
     }
 

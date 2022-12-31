@@ -1,26 +1,25 @@
-# About Laravel Dusk Screenrecordings
+# About Dusk Recordings
 
-Laravel Dusk Screenrecording is a package, that was created by and maintained by [Sander van Kasteel](http://github.com/sandervankasteel/) 
-that enables you to do screenrecording of your Dusk tests.
+This packge is forked from [Sander van Kasteel's](https://github.com/sandervankasteel/) [Laravel Dusk Screenrecordings](https://github.com/sandervankasteel/laravel-dusk-screenrecordings).
 
-<INSERT_EXAMPLE>
+This update brings it to the current versions of Laravel, and is being worked on to include Firefox and Edge support.
 
 ## Usage
 ### Warning: Currently only Chrome is supported 
 
-> **Requires [PHP 7.4+](https://php.net/releases/)**
+> **Requires [PHP 8.0+](https://php.net/releases/)**
 > 
-> **Requires Laravel 7 (or higher)**
+> **Requires Laravel 8 (or higher)**
 
 1. First install the pacakge
 ```
-composer require --dev sandervankasteel/laravel-dusk-screenrecordings
+composer require --dev brianclogan/dusk-recordings
 ```
 
 2. Publish the configuration
 
 ```
-php artisan vendor:publish
+php artisan recordings:publish
 ```
 
 3. Modify your `tests/DuskTestcase.php` to have screen recordings work.
@@ -74,7 +73,7 @@ recordings from.
 4. Add the `WithScreenRecordings` to your `tests/DuskTestCase.php`, so we will actually record and store the recordings. 
 
 ```php
-use Sandervankasteel\LaravelDuskScreenrecordings\WithScreenRecordings;
+use Brianclogan\DuskRecordings\WithScreenRecordings;
 
 abstract class DuskTestCase extends BaseTestCase
 {
@@ -90,9 +89,9 @@ abstract class DuskTestCase extends BaseTestCase
 ## How it works
 
 This package works by loading a browser plugin, which in turns creates a new (pinned) tab in the browser, 
-then it initializes the screenrecording and then executes the test as usual. 
+then it initializes the recording and then executes the test as usual. 
 
-Once the tests are finished, based on the configuration it will 'download' the screenrecording from the tab created by 
+Once the tests are finished, based on the configuration it will 'download' the recording from the tab created by 
 the browser extension.  
 
 ## TODO
