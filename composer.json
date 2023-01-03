@@ -23,7 +23,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Brianclogan\\DuskRecordings\\ServiceProvider"
+                "Brianclogan\\DuskRecordings\\DuskRecordingsServiceProvider"
             ]
         }
     }

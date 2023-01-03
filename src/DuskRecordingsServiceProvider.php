@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
-class ServiceProvider extends BaseServiceProvider
+class DuskRecordingsServiceProvider extends BaseServiceProvider
 {
 
     public function boot()
@@ -16,7 +16,7 @@ class ServiceProvider extends BaseServiceProvider
         $this->loadViewsFrom(__DIR__ . '/views', 'screenrecording');
 
         $this->publishes([
-            __DIR__ . '/config/dusk-reordings.php' => config_path('dusk-reordings.php')
+            __DIR__ . '/config/dusk-recordings.php' => config_path('dusk-reordings.php')
         ]);
 
         if(!$this->app->environment('production')) {
