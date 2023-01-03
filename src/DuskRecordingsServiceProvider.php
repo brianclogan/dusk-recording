@@ -16,7 +16,7 @@ class DuskRecordingsServiceProvider extends BaseServiceProvider
         $this->loadViewsFrom(__DIR__ . '/views', 'screenrecording');
 
         $this->publishes([
-            __DIR__ . '/config/dusk-recordings.php' => config_path('dusk-reordings.php')
+            __DIR__ . '/config/dusk-recordings.php' => config_path('dusk-recordings.php')
         ]);
 
         if(!$this->app->environment('production')) {
