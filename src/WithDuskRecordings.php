@@ -8,7 +8,7 @@ use Closure;
 use Laravel\Dusk\Browser;
 use Laravel\Dusk\Concerns\ProvidesBrowser;
 
-trait WithScreenRecordings
+trait WithDuskRecordings
 {
     use ProvidesBrowser;
 
