@@ -13,10 +13,10 @@ class ServiceProvider extends BaseServiceProvider
 
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../views', 'screenrecording');
+        $this->loadViewsFrom(__DIR__ . '/views', 'screenrecording');
 
         $this->publishes([
-            __DIR__ . '../config/screenrecording.php' => config_path('screenrecording.php')
+            __DIR__ . '/config/dusk-reordings.php' => config_path('dusk-reordings.php')
         ]);
 
         if(!$this->app->environment('production')) {
@@ -40,7 +40,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/screenrecording.php', 'screenrecording'
+            __DIR__.'/config/screenrecording.php', 'screenrecording'
         );
     }
 }

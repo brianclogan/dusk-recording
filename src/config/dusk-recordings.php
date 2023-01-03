@@ -9,7 +9,7 @@ return [
      *  - 'failures', only stores failures
      *  - 'successes', only store successes
      */
-    'to_store' => env('SCREENRECORDING_STORE', 'all'),
+    'to_store' => env('DUSK_RECORDING_STORE', 'all'),
 
     /**
      * The source which is being used to record with.
@@ -18,17 +18,17 @@ return [
      * in case when running this on a dual  monitor setup. Please note, naming need to conform to what the browser calls
      * the sharing options, when 'sharing'.
      */
-    'source' => env('SCREENRECORDING_SOURCE', 'Entire Screen'),
+    'source' => env('DUSK_RECORDING_SOURCE', 'Entire Screen'),
 
 
     /**
      * The directory where to store the screen recordings.
      * Can be used in CI pipelines for archiving purposes.
      */
-    'target_directory' => env('SCREENRECORDING_TARGET_DIR', base_path('tests/Browser/screenrecordings')),
+    'target_directory' => env('DUSK_RECORDING_TARGET_DIR', base_path('tests/Browser/dusk-recordings')),
 
     /**
      * The directory where the browser downloads the screen recording to.
      */
-    'download_directory' => env('SCREENRECORDING_DOWNLAD_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'screenrecordings'),
+    'download_directory' => env('DUSK_RECORDING_DOWNLAD_DIR', sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'dusk-recordings'),
 ];
