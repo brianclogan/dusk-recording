@@ -16,7 +16,7 @@ trait WithDuskRecordings
 
     public function browse(Closure $callback)
     {
-        $this->downloadDir = config('screenrecording.download_directory');
+        $this->downloadDir = config('dusk-recordings.download_directory');
 
         /** @var Browser[] $browsers */
         $browsers = $this->createBrowsersFor($callback);
@@ -67,7 +67,7 @@ trait WithDuskRecordings
             // Give the browser some time, to handle the file downloading process
             $browser->pause(500);
 
-            $target_dir = config('screenrecording.target_directory');
+            $target_dir = config('dusk-recordings.target_directory');
 
             $sourceFile = "$this->downloadDir/test.webm";
             $name = $this->getCallerName();
@@ -84,7 +84,7 @@ trait WithDuskRecordings
     public function getChromeArgs()
     {
         $extensionPath = __DIR__ . '/chrome';
-//        $extensionPath = base_path('vendor/sandervankasteel/laravel-dusk-screenrecordings/chrome');
+//        $extensionPath = base_path('vendor/brianclogan/dusk-recordings/src/chrome');
         
         return [
             '--enable-usermedia-screen-capturing',
@@ -111,7 +111,7 @@ trait WithDuskRecordings
      */
     private function shouldStoreRecording($failure = false)
     {
-        $setting = config('screenrecording.to_store');
+        $setting = config('dusk-recordings.to_store');
 
         if($setting === 'all') {
             return true;
