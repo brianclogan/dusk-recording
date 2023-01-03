@@ -32,14 +32,7 @@ class ServiceProvider extends BaseServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Console\InstallCommand::class,
-                Console\DuskCommand::class,
-                Console\DuskFailsCommand::class,
-                Console\MakeCommand::class,
-                Console\PageCommand::class,
-                Console\PurgeCommand::class,
-                Console\ComponentCommand::class,
-                Console\ChromeDriverCommand::class,
+                Console\InstallCommand::class
             ]);
         }
     }
