@@ -40,7 +40,7 @@ class DuskRecordingsServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/screenrecording.php', 'screenrecording'
+            __DIR__.'/config/dusk-recordings.php', 'dusk-recordings'
         );
     }
 }
