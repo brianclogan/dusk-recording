@@ -61,8 +61,8 @@ and the
 
 ```php
 ->setExperimentalOption("prefs", [
-                "download.default_directory" => $this->downloadDir
-            ])
+    "download.default_directory" => $this->downloadDir
+])
 ```
 Firstly, we need to get a specific set of arguments, so that Chrome will allow us to record from an non-HTTPS source and
 automatically select the source from which to record from. 
