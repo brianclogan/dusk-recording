@@ -73,12 +73,12 @@ recordings from.
 4. Add the `WithScreenRecordings` to your `tests/DuskTestCase.php`, so we will actually record and store the recordings. 
 
 ```php
-use Brianclogan\DuskRecordings\WithScreenRecordings;
+use Brianclogan\DuskRecordings\WithDuskRecordings;
 
 abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication,
-        WithScreenRecordings;
+        WithDuskRecordings;
         
     // Rest of your DuskTestCase
 }
